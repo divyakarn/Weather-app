@@ -61,12 +61,12 @@ export class DashboardComponent implements OnInit {
           this.viewRain = false;
           this.viewCloud = false;
         }
-        else if (this.Weather.weather[0].main === "Rain"|| this.Weather.weather[0].main==='Mist'||this.Weather.weather[0].main==='Thunderstorm'|| this.Weather.weather[0].main === 'Drizzle') {
+        if (this.Weather.weather[0].main === "Rain"|| this.Weather.weather[0].main==='Mist'||this.Weather.weather[0].main==='Thunderstorm'|| this.Weather.weather[0].main === 'Drizzle') {
           this.viewRain = true;
           this.viewSunny = false;
           this.viewCloud = false;
         }
-        else if (this.Weather.weather[0].main === "Clouds"||this.Weather.weather[0].main==='Haze') {
+        if (this.Weather.weather[0].main === "Clouds"||this.Weather.weather[0].main==="Haze") {
           this.viewCloud = true;
           this.viewSunny = false;
           this.viewRain = false;
