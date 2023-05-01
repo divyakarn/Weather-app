@@ -38,7 +38,7 @@ export class PastDetailsComponent implements OnInit {
             this.viewRain = false;
             this.viewCloud = false;
           }
-          else if(this.Weather[0].weather[0].main === "Rain"||this.Weather[0].weather[0].main==='Mist' || this.Weather[0].weather[0].main==='Thunderstorm' || this.Weather[0].weather.main === 'Drizzle'){
+          else if(this.Weather[0].weather[0].main === "Rain"||this.Weather[0].weather[0].main==='Mist' || this.Weather[0].weather[0].main==='Thunderstorm' || this.Weather[0].weatherp[0].main === 'Drizzle'){
             this.viewRain = true;
             this.viewSunny = false;
             this.viewCloud = false;
