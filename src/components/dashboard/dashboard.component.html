@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <ngx-loading *ngIf="loading" [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="text-center Heading">
+                <h1>WORLD WEATHER</h1>
+            </div>
+        </div>
+    </div>
+    <form>
+        <div class="row" style="padding-top:30px">
+            <div class="col-lg-4 col-md-4 col-sm-4 mt-3 pt-0">
+                <div class="col">
+                    <input [(ngModel)]="Lat" type="text" class="form-control inputHeight" id="exampleFormControlInput1"
+                        name="lat" placeholder="Lattitude">
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 mt-3 pt-0">
+                <div class="col">
+                    <input [(ngModel)]="Long" type="text" class="form-control inputHeight" id="exampleFormControlInput1"
+                        name="long" placeholder="Longitude">
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 mt-3 pt-0">
+                <div class="col">
+                    <button class="btn btn-success btn-lg btn-block" style="width:100%" type="button"
+                        (click)="getValues()">Get Weather
+                        Details</button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+    <div class="row">
+        <div class="col-lg-4 col-md-12 col-sm-4 mt-5 cardBackground">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 sol-sm-12 p-4">
+                    <div class="heading2 text-center" >
+                        <h6>LOCAL WEATHER REPORT</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 ">
+                    <div *ngIf="viewSunny" class="image-container">
+                    </div>
+                    <div *ngIf="viewRain" class="image-rain">
+                    </div>
+                    <div *ngIf="viewCloud" class="image-cloud">
+                    </div>
+
+                    <div class="speedicon mt-5">
+                        <div class="iconhldr">
+                        </div>
+                        <!-- <img src="../../assets/icons/compass.png" alt=""> -->
+                        <small>{{Weather.wind.speed}}km/hr</small>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="info text-center">
+                        <p style="font-size: 31px;" *ngIf="Weather.name">{{Weather.name}}</p>
+                        <p>{{Weather.weather[0].description}}</p>
+                        <div style="margin-top: 30px;">
+                            <p style="font-size: 31px;">{{Weather.wind.gust}}</p>
+                            <p style="font-size: 31px;">{{Weather.wind.deg}}°</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-1">
+        </div>
+
+        <div class="col-lg-7 col-md-12 col-sm-7 mt-5 cardBackground">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 sol-sm-12 p-4">
+                    <div class="heading2 text-center">
+                        <h6>SEA FORCAST REPORT</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="info2">
+                        <div class="right-cont" *ngFor="let item of Weather.main | keyvalue">
+                            <p>{{item.key}}</p>
+                            <p>{{item.value}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 mt-5 p-2 flexer">
+            <div class="col-lg-2 col-md-12 col-sm-12" *ngFor="let item of RecentlySearched">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-3 cardCont" *ngIf="RecentlySearched.length>0"
+                                (click)="navigateToPastDetails(item.name)">
+                                <div class="image-container2 col-lg-3 col-md-6 col-sm-2"
+                                    *ngIf="item.weather[0].main==='Clear'">
+                                </div>
+                                <div class="image-rain2 col-lg-3 col-md-6 col-sm-2"
+                                    *ngIf="item.weather[0].main==='Rain'">
+                                </div>
+                                <div class="image-cloud2 col-lg-3 col-md-6 col-sm-2"
+                                    *ngIf="item.weather[0].main==='Clouds'">
+                                </div>
+                                <p class="text-center col-lg-12 col-md-3 col-sm-2 text-center Headingsize">{{item.name}}
+                                </p>
+                                <div class="col-lg-12 col-md-3 col-sm-3 text-cente">
+                                    <h5 class="text-center">{{item.main.temp}}</h5>
+                                    <h5 class="text-center">{{item.weather[0].main}}</h5>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

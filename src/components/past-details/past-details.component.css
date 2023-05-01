@@ -1,0 +1,124 @@
+
+*{
+    color: white;
+}
+.imgcont{
+    width:40px;
+    height: 40px;
+    background-image: url(../../assets/icons/back-button.png);
+    background-size: cover;
+  }
+  .iconbox{
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+  }
+  .headingfont{
+    font-size: 31px;
+  }
+  .heading2{
+    border-bottom: 0.5px solid white; padding-bottom: 10px;
+  }
+  .cardBackground{
+    background-color: #0000001D;
+    border-radius: 12px;
+}
+  .iconhldr{
+    width: 30px;
+    height: 30px;
+    background-image: url(../../assets/icons/navigation.png);
+    background-size: cover;
+    margin-right: 10px;
+  }
+
+.Heading{
+    color: white;
+    padding: 40px;
+     /* font-size: 51px;  */
+    letter-spacing: 10px;
+}
+  .image-container{
+    width: 100%;
+    background-image: url(../../assets/icons/day.svg);
+    background-position: center;
+    background-size: cover;
+    height: 0;
+    padding: 0; /* reset */
+    padding-bottom: calc(100% * 2/ 4);
+  }
+  .image-rain{
+    width: 100%;
+    background-image: url(../../assets/icons/rainy-1.svg);
+    background-position: center;
+    background-size: cover;
+    height: 0;
+    padding: 0; /* reset */
+    padding-bottom: calc(100% * 2 / 4);
+  }
+  .image-cloud{
+    width: 100%;
+    background-image: url(../../assets/icons/cloudy.svg);
+    background-position: center;
+    background-size: cover;
+    height: 0;
+    padding: 0; /* reset */
+    padding-bottom: calc(100% * 2 / 4);
+
+
+}  .iconhldr{
+    width: 30px;
+    height: 30px;
+    background-image: url(../../assets/icons/navigation.png);
+    background-size: cover;
+    margin-right: 10px;
+  }
+  .image-container2{
+    width: 100%;
+    background-image: url(../../assets/icons/day.svg);
+    background-position: center;
+    background-size: cover;
+    height: 0;
+    padding: 0; /* reset */
+    padding-bottom: calc(100% * 3 / 4);
+  }
+  .speedicon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .Headingsize{
+    font-size: 31px;
+  }
+  .flexer{
+    display: flex;
+    justify-content: space-between;
+    background-color: #0000001D; 
+    border-radius: 12px;
+  }
+  .cardCont{
+    border-right:1px solid white;;
+  }
+  
+  .right-cont{
+    display: flex; justify-content: space-between;
+  }
+
+  @media screen and (max-width: 990px) {
+    .cardCont {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid white;
+   
+    }
+    .image-container2{
+        width: 105px;
+    }
+    .flexer{
+        flex-direction: column;
+    }
+
+  }
+  
+
+

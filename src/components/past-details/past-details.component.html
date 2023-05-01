@@ -1,0 +1,79 @@
+<div class="row mb-5">
+    <div class="col-lg-12 col-md-12 col-sm-12 d-flex">
+        <div class="col-lg-1 col-md-1 col-sm-1 iconbox">
+
+            <div class="imgcont" (click)="navigateToDashboard()">
+    
+            </div>
+        </div>
+        <div class="col-lg-10 col-md-10 col-sm-10">
+            <p class="text-center Heading">PAST DETAILS</p>
+        </div>
+    </div>
+    
+    
+    
+</div>
+
+<div class="row mb-5">
+    <div class="col-lg-4 col-md-12 col-sm-4 mt-5 cardBackground">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 sol-sm-12 p-4">
+                <div class="heading2 text-center">
+                    <h6>LOCAL WEATHER REPORT</h6>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 ">
+                <div *ngIf="viewSunny" class="image-container">
+                </div>
+                <div *ngIf="viewRain" class="image-rain">
+                </div>
+                <div *ngIf="viewCloud" class="image-cloud">
+                </div>
+                
+                <div class="speedicon mt-5">
+                    <div  class="iconhldr" >
+                    </div>
+                    <!-- <img src="../../assets/icons/compass.png" alt=""> -->
+                    <small>{{Weather[0].wind.speed}}km/hr</small>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="info text-center">
+                    <p class="headingfont" *ngIf="Weather[0].name">{{Weather[0].name}}</p>
+                    <p >{{Weather[0].weather[0].description}}</p>    
+                    <div style="margin-top: 30px;">
+                            <p  class="headingfont">{{Weather[0].wind.gust}}</p>
+                            <p class="headingfont">{{Weather[0].wind.deg}}°</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="col-lg-1 col-md-1 col-sm-1">
+    </div>
+
+    <div class="col-lg-7 col-md-12 col-sm-7 mt-5 cardBackground">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 sol-sm-12 p-4">
+                <div class="heading2 text-center">
+                    <h6>SEA FORCAST REPORT</h6>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="info2">
+                    <div class="right-cont" *ngFor="let item of Weather[0].main | keyvalue">
+                        <p>{{item.key}}</p>  
+                        <p>{{item.value}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
